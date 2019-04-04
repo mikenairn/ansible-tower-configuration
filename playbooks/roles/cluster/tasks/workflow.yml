@@ -156,3 +156,8 @@
 
 - name: "Update Workflow job template with schema"
   shell: "tower-cli workflow schema \"{{ cluster_workflow_job_template_name }}\" @cluster_workflow_schema.yml"
+
+- name: Clean up files
+  file:
+    path: cluster_workflow_schema.yml
+    state: absent
